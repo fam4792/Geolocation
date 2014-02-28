@@ -12,7 +12,7 @@ myinp = gets.chomp
 
 
 
-if myinp.include? "."
+if myinp.include? "." 
 
 	coord = Geocoder.search(myinp).first.address
 	nextl
@@ -20,9 +20,10 @@ if myinp.include? "."
 	print coord
 	nextl 
 else
-	coord = Geocoder.search(myinp).first.coordinates
+	lat = Geocoder.search(myinp).first.latitude
+	lon = Geocoder.search(myinp).first.longitude
 	nextl
-	print "Coordinates for your entered address : Latitude = #{coord.first} , Longitude = #{coord.last}"
+	print "Coordinates for your entered address : Latitude = #{lat} , Longitude = #{lon}"
 	nextl
 end
 
